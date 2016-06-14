@@ -3,19 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hexo</title>
+  <title>Hello</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="Hello">
 <meta property="og:url" content="https://yeyeye0525.github.io/myblog/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="Hello">
 <meta property="og:description">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="Hello">
 <meta name="twitter:description">
   
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="alternate" href="/atom.xml" title="Hello" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -36,7 +36,7 @@
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
       <h1 id="logo-wrap">
-        <a href="/myblog/" id="logo">Hexo</a>
+        <a href="/myblog/" id="logo">Hello</a>
       </h1>
       
     </div>
@@ -64,6 +64,43 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-nodejs-cmd" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/myblog/2016/06/14/nodejs-cmd/" class="article-date">
+  <time datetime="2016-06-14T15:09:27.000Z" itemprop="datePublished">2016-06-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/myblog/2016/06/14/nodejs-cmd/">nodejs-cmd</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>我是前端，<br>开始写博客啦。<br>使用nodejs执行命令行指令。<br>灰常简单，上代码，哈哈。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> exec = <span class="built_in">require</span>(<span class="string">'child_process'</span>).exec;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> curl = <span class="string">'curl https://www.ppmoney.com/'</span>;</span><br><span class="line"></span><br><span class="line">exec(curl,<span class="function"><span class="keyword">function</span>(<span class="params">err,stdout,stderr</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (err) &#123;</span><br><span class="line">		<span class="built_in">console</span>.log(err)</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="keyword">var</span> data = <span class="built_in">JSON</span>.stringify(stdout);</span><br><span class="line">		<span class="built_in">console</span>.log(data)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://yeyeye0525.github.io/myblog/myblog/2016/06/14/nodejs-cmd/" data-id="cipflm3od0002zchd43qqj0u6" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-hello" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/myblog/2016/06/13/hello/" class="article-date">
@@ -90,7 +127,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://yeyeye0525.github.io/myblog/myblog/2016/06/13/hello/" data-id="cipfiq1wx0000v4hdpbujn6c0" class="article-share-link">Share</a>
+      <a data-url="https://yeyeye0525.github.io/myblog/myblog/2016/06/13/hello/" data-id="cipflm3oa0001zchd7153hxhz" class="article-share-link">Share</a>
       
       
     </footer>
@@ -135,7 +172,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://yeyeye0525.github.io/myblog/myblog/2016/06/13/hello-world/" data-id="cipfiq1x20001v4hdc3ptt25j" class="article-share-link">Share</a>
+      <a data-url="https://yeyeye0525.github.io/myblog/myblog/2016/06/13/hello-world/" data-id="cipflm3o30000zchd5ij91si8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -175,6 +212,10 @@
       <ul>
         
           <li>
+            <a href="/myblog/2016/06/14/nodejs-cmd/">nodejs-cmd</a>
+          </li>
+        
+          <li>
             <a href="/myblog/2016/06/13/hello/">hello</a>
           </li>
         
@@ -194,7 +235,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2016 John Doe<br>
+      &copy; 2016 yeyeye0525<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
