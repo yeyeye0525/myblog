@@ -53,7 +53,7 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Zoeken"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://yeyeye0525.github.io/myblog"></form>
@@ -63,6 +63,66 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-npm私服" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/myblog/2016/06/15/npm私服/" class="article-date">
+  <time datetime="2016-06-15T13:04:33.000Z" itemprop="datePublished">2016-06-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/myblog/2016/06/15/npm私服/">npm私服</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>  我是前端。<br>  团队现在人多了，团队管理、协作、沟通都需要很多成本，目前是使用git进行前端代码维护，构建新的项目，活动专题都需要手动copy各种代码，npm安装开发环境，插件等，工作繁琐，杂乱，不利于团队发展。</p>
+<p>  故需要搭建公司内部的npm私服，进行内部的npm包开发，同时需要搭建一个前端构建平台(nodejs+express+mongodb+angularjs+bootstrap)。快速构建前端解决方案，也符合我们前端高逼格的开发模式。（只想一个人静静的装逼。。。）</p>
+<h2 id="使用sinopia私服站点"><a href="#使用sinopia私服站点" class="headerlink" title="使用sinopia私服站点"></a>使用sinopia私服站点</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install -g sinopia</span><br><span class="line">sinopia</span><br></pre></td></tr></table></figure>
+<ul>
+<li>安装期间貌似报error(环境？)，不过不印象。。。奇怪</li>
+<li>在配置文件<br>C:\Users{用户名}\AppData\Roaming\sinopia\config.yaml(执行sinopia命令会输出的，大大们可以自己去瞅瞅)<br>添加最后添加<br>listen: 0.0.0.0:4873<br>局域网就可以访问了。</li>
+</ul>
+<blockquote>
+<p>修改npm的registry</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install -g nrm</span><br><span class="line">nrm add local http://localhost:4873 </span><br><span class="line">nrm use local</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>想切换回来的时候:</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nrm use npm</span><br></pre></td></tr></table></figure>
+<p>开发npm模块(待补充)</p>
+<ol>
+<li>到npm官网注册账号 <a href="https://www.npmjs.com/" target="_blank" rel="external">https://www.npmjs.com/</a></li>
+<li>npm init (根据提示填写信息)</li>
+<li>开发功能</li>
+<li>npm adduser</li>
+<li>npm publish</li>
+</ol>
+<p>图暂时还没有，后续补充。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://yeyeye0525.github.io/myblog/myblog/2016/06/15/npm私服/" data-id="cipgwttn60002hahd4xjl304u" class="article-share-link">Delen</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-nodejs-cmd" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -91,7 +151,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://yeyeye0525.github.io/myblog/myblog/2016/06/14/nodejs-cmd/" data-id="cipfnm43e00021shdevlhz0f9" class="article-share-link">Share</a>
+      <a data-url="https://yeyeye0525.github.io/myblog/myblog/2016/06/14/nodejs-cmd/" data-id="cipgwttn40001hahdydicc2qo" class="article-share-link">Delen</a>
       
       
     </footer>
@@ -138,7 +198,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://yeyeye0525.github.io/myblog/myblog/2016/06/13/hello/" data-id="cipfnm43b00011shdmx3x0w38" class="article-share-link">Share</a>
+      <a data-url="https://yeyeye0525.github.io/myblog/myblog/2016/06/13/hello/" data-id="cipgwttn80003hahdddushy72" class="article-share-link">Delen</a>
       
       
     </footer>
@@ -183,7 +243,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://yeyeye0525.github.io/myblog/myblog/2016/06/13/hello-world/" data-id="cipfnm43400001shdkhihb9vh" class="article-share-link">Share</a>
+      <a data-url="https://yeyeye0525.github.io/myblog/myblog/2016/06/13/hello-world/" data-id="cipgwttmz0000hahd40n2gt8c" class="article-share-link">Delen</a>
       
       
     </footer>
@@ -208,7 +268,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">Archieven</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/myblog/archives/2016/06/">June 2016</a></li></ul>
     </div>
@@ -218,9 +278,13 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Recente berichten</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/myblog/2016/06/15/npm私服/">npm私服</a>
+          </li>
         
           <li>
             <a href="/myblog/2016/06/14/nodejs-cmd/">nodejs-cmd</a>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>npm私服 | Hello</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="我是前端。  团队现在人多了，团队管理、协作、沟通都需要很多成本，目前是使用git进行前端代码维护，构建新的项目，活动专题都需要手动copy各种代码，npm安装开发环境，插件等，工作繁琐，杂乱，不利于团队发展。
+  故需要搭建公司内部的npm私服，进行内部的npm包开发，同时需要搭建一个前端构建平台(nodejs+express+mongodb+angularjs+bootstrap)。快速构">
+<meta property="og:type" content="article">
+<meta property="og:title" content="npm私服">
+<meta property="og:url" content="https://yeyeye0525.github.io/myblog/2016/06/15/npm私服/index.html">
+<meta property="og:site_name" content="Hello">
+<meta property="og:description" content="我是前端。  团队现在人多了，团队管理、协作、沟通都需要很多成本，目前是使用git进行前端代码维护，构建新的项目，活动专题都需要手动copy各种代码，npm安装开发环境，插件等，工作繁琐，杂乱，不利于团队发展。
+  故需要搭建公司内部的npm私服，进行内部的npm包开发，同时需要搭建一个前端构建平台(nodejs+express+mongodb+angularjs+bootstrap)。快速构">
+<meta property="og:updated_time" content="2016-06-15T13:30:02.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="npm私服">
+<meta name="twitter:description" content="我是前端。  团队现在人多了，团队管理、协作、沟通都需要很多成本，目前是使用git进行前端代码维护，构建新的项目，活动专题都需要手动copy各种代码，npm安装开发环境，插件等，工作繁琐，杂乱，不利于团队发展。
+  故需要搭建公司内部的npm私服，进行内部的npm包开发，同时需要搭建一个前端构建平台(nodejs+express+mongodb+angularjs+bootstrap)。快速构">
+  
+    <link rel="alternate" href="/atom.xml" title="Hello" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/myblog/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/myblog/" id="logo">Hello</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/myblog/">Home</a>
+        
+          <a class="main-nav-link" href="/myblog/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Zoeken"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://yeyeye0525.github.io/myblog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-npm私服" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/myblog/2016/06/15/npm私服/" class="article-date">
+  <time datetime="2016-06-15T13:04:33.000Z" itemprop="datePublished">2016-06-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      npm私服
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>  我是前端。<br>  团队现在人多了，团队管理、协作、沟通都需要很多成本，目前是使用git进行前端代码维护，构建新的项目，活动专题都需要手动copy各种代码，npm安装开发环境，插件等，工作繁琐，杂乱，不利于团队发展。</p>
+<p>  故需要搭建公司内部的npm私服，进行内部的npm包开发，同时需要搭建一个前端构建平台(nodejs+express+mongodb+angularjs+bootstrap)。快速构建前端解决方案，也符合我们前端高逼格的开发模式。（只想一个人静静的装逼。。。）</p>
+<h2 id="使用sinopia私服站点"><a href="#使用sinopia私服站点" class="headerlink" title="使用sinopia私服站点"></a>使用sinopia私服站点</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install -g sinopia</span><br><span class="line">sinopia</span><br></pre></td></tr></table></figure>
+<ul>
+<li>安装期间貌似报error(环境？)，不过不印象。。。奇怪</li>
+<li>在配置文件<br>C:\Users{用户名}\AppData\Roaming\sinopia\config.yaml(执行sinopia命令会输出的，大大们可以自己去瞅瞅)<br>添加最后添加<br>listen: 0.0.0.0:4873<br>局域网就可以访问了。</li>
+</ul>
+<blockquote>
+<p>修改npm的registry</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install -g nrm</span><br><span class="line">nrm add local http://localhost:4873 </span><br><span class="line">nrm use local</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>想切换回来的时候:</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nrm use npm</span><br></pre></td></tr></table></figure>
+<p>开发npm模块(待补充)</p>
+<ol>
+<li>到npm官网注册账号 <a href="https://www.npmjs.com/" target="_blank" rel="external">https://www.npmjs.com/</a></li>
+<li>npm init (根据提示填写信息)</li>
+<li>开发功能</li>
+<li>npm adduser</li>
+<li>npm publish</li>
+</ol>
+<p>图暂时还没有，后续补充。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://yeyeye0525.github.io/myblog/myblog/2016/06/15/npm私服/" data-id="cipgwttn60002hahd4xjl304u" class="article-share-link">Delen</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/myblog/2016/06/14/nodejs-cmd/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ouder</strong>
+      <div class="article-nav-title">nodejs-cmd</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archieven</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/myblog/archives/2016/06/">June 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recente berichten</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/myblog/2016/06/15/npm私服/">npm私服</a>
+          </li>
+        
+          <li>
+            <a href="/myblog/2016/06/14/nodejs-cmd/">nodejs-cmd</a>
+          </li>
+        
+          <li>
+            <a href="/myblog/2016/06/13/hello/">我是前端</a>
+          </li>
+        
+          <li>
+            <a href="/myblog/2016/06/13/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 yeyeye0525<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/myblog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/myblog/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/myblog/fancybox/jquery.fancybox.css">
+  <script src="/myblog/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/myblog/js/script.js"></script>
+
+  </div>
+</body>
+</html>
