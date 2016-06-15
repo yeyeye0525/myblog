@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="Hello">
 <meta property="og:description" content="我是前端。  团队现在人多了，团队管理、协作、沟通都需要很多成本，目前是使用git进行前端代码维护，构建新的项目，活动专题都需要手动copy各种代码，npm安装开发环境，插件等，工作繁琐，杂乱，不利于团队发展。
   故需要搭建公司内部的npm私服，进行内部的npm包开发，同时需要搭建一个前端构建平台(nodejs+express+mongodb+angularjs+bootstrap)。快速构">
-<meta property="og:updated_time" content="2016-06-15T13:41:07.000Z">
+<meta property="og:updated_time" content="2016-06-15T13:43:06.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="npm私服">
 <meta name="twitter:description" content="我是前端。  团队现在人多了，团队管理、协作、沟通都需要很多成本，目前是使用git进行前端代码维护，构建新的项目，活动专题都需要手动copy各种代码，npm安装开发环境，插件等，工作繁琐，杂乱，不利于团队发展。
@@ -95,16 +95,9 @@
 <li>安装期间貌似报error(环境？)，不过不影响运行。。。奇怪</li>
 <li>在配置文件<br>C:\Users{用户名}\AppData\Roaming\sinopia\config.yaml(执行sinopia命令会输出的，大大们可以自己去瞅瞅)<br>添加最后添加<br>listen: 0.0.0.0:4873<br>局域网就可以访问了。</li>
 </ul>
-<blockquote>
-<p>修改npm的registry</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install -g nrm</span><br><span class="line">nrm add local http://localhost:4873 </span><br><span class="line">nrm use local</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>想切换回来的时候:</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nrm use npm</span><br></pre></td></tr></table></figure>
-<p>开发npm模块(待补充)</p>
-<ol>
+<h2 id="修改npm的registry"><a href="#修改npm的registry" class="headerlink" title="修改npm的registry"></a>修改npm的registry</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install -g nrm</span><br><span class="line">nrm add local http://localhost:4873 </span><br><span class="line">nrm use local</span><br></pre></td></tr></table></figure>
+<h2 id="想切换回来的时候"><a href="#想切换回来的时候" class="headerlink" title="想切换回来的时候:"></a>想切换回来的时候:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nrm use npm</span><br></pre></td></tr></table></figure>
+<h2 id="开发npm模块-待补充"><a href="#开发npm模块-待补充" class="headerlink" title="开发npm模块(待补充)"></a>开发npm模块(待补充)</h2><ol>
 <li>到npm官网注册账号 <a href="https://www.npmjs.com/" target="_blank" rel="external">https://www.npmjs.com/</a></li>
 <li>npm init (根据提示填写信息)</li>
 <li>开发功能</li>
@@ -116,7 +109,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://yeyeye0525.github.io/myblog/myblog/2016/06/15/npm私服/" data-id="cipgxeiim0003jehdww6hh8u6" class="article-share-link">Partager</a>
+      <a data-url="https://yeyeye0525.github.io/myblog/myblog/2016/06/15/npm私服/" data-id="cipgxh22x0003jvhddfl5ra52" class="article-share-link">Partager</a>
       
       
     </footer>
