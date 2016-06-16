@@ -26,6 +26,16 @@
   <link rel="stylesheet" href="/myblog/css/style.css">
   
 
+  <script>
+   var _hmt = _hmt || [];
+   (function() {
+   var hm = document.createElement("script");
+   hm.src = "//hm.baidu.com/hm.js?a0accb8ad656b1c68fa6f24d7591f45a";
+   var s = document.getElementsByTagName("script")[0]; 
+   s.parentNode.insertBefore(hm, s);
+   })();
+   </script>
+
 </head>
 
 <body>
@@ -63,6 +73,52 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-是否移动端" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/myblog/2016/06/16/是否移动端/" class="article-date">
+  <time datetime="2016-06-16T14:31:26.000Z" itemprop="datePublished">2016-06-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/myblog/2016/06/16/是否移动端/">是否移动端</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>我是前端。<br>现在都是移动端的天下，大家都习惯在手机上购物、浏览、获取资讯，每天大量的零碎时间都花在手机上，俗称手机党。</p>
+<p>现在我也是，手机对多了还真多不好。</p>
+<p>以前学生时代，家里穷，一直渴望能有一部手机，可以上网，挂q，玩游戏。<br>那是还是诺🐔的天下，可谁有想到这样的手机巨头轰然倒下，友谊的小船说翻就翻。</p>
+<p>人生如戏，全靠演技。</p>
+<p>做前端，也是如此。要学会居安思危，不断突破自我，每天进步一点点。</p>
+<p>我们做网页，现在很少做响应式布局，都是pc、h5各一套，所以就要判断ua进行跳转，要不用户体验多不好呀。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 是否移动端访问</span><br><span class="line"> * @anotherdate 2015-12-06T11:08:17+0800</span><br><span class="line"> * @author yeyeye0525</span><br><span class="line"> */</span><br><span class="line">function isMobile() &#123;</span><br><span class="line">    var sUserAgent = navigator.userAgent.toLowerCase();</span><br><span class="line">    var bIsIpad = sUserAgent.match(/ipad/i) == &quot;ipad&quot;;</span><br><span class="line">    var bIsIphoneOs = sUserAgent.match(/iphone os/i) == &quot;iphone os&quot;;</span><br><span class="line">    var bIsMidp = sUserAgent.match(/midp/i) == &quot;midp&quot;;</span><br><span class="line">    var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == &quot;rv:1.2.3.4&quot;;</span><br><span class="line">    var bIsUc = sUserAgent.match(/ucweb/i) == &quot;ucweb&quot;;</span><br><span class="line">    var bIsAndroid = sUserAgent.match(/android/i) == &quot;android&quot;;</span><br><span class="line">    var bIsCE = sUserAgent.match(/windows ce/i) == &quot;windows ce&quot;;</span><br><span class="line">    var bIsWM = sUserAgent.match(/windows mobile/i) == &quot;windows mobile&quot;;</span><br><span class="line"></span><br><span class="line">    if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) &#123;</span><br><span class="line">        return true;</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        return false;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>当然，也可以在nginx做跳转判断。</p>
+<p>无论在前端或服务器端做强跳都不好。<br>我们说和谐社会，应该让用户有更多自主权。<br>所以最好的解决方法：用户打开网站，在下方悬浮提示当前访问站点为pc端，是否切换移动端，用户点击跳转，写入cookie，下次再次进来页面，如果存在cookie，直接跳转。</p>
+<p>小二，上图。<br><img src="assets/ismobile.png" alt="是否移动端"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://yeyeye0525.github.io/myblog/myblog/2016/06/16/是否移动端/" data-id="cipigubs70001q5hdxhq94kz4" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-npm私服" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -107,7 +163,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://yeyeye0525.github.io/myblog/myblog/2016/06/15/npm私服/" data-id="cipgxh22x0003jvhddfl5ra52" class="article-share-link">Partager</a>
+      <a data-url="https://yeyeye0525.github.io/myblog/myblog/2016/06/15/npm私服/" data-id="cipigubsm0003q5hd0j79zmog" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -144,7 +200,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://yeyeye0525.github.io/myblog/myblog/2016/06/14/nodejs-cmd/" data-id="cipgxh22u0002jvhd7v8o9f0w" class="article-share-link">Partager</a>
+      <a data-url="https://yeyeye0525.github.io/myblog/myblog/2016/06/14/nodejs-cmd/" data-id="cipigubsa0002q5hd9u9ngnc0" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -191,7 +247,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://yeyeye0525.github.io/myblog/myblog/2016/06/13/hello/" data-id="cipgxh22k0000jvhduec4fw42" class="article-share-link">Partager</a>
+      <a data-url="https://yeyeye0525.github.io/myblog/myblog/2016/06/13/hello/" data-id="cipigubso0004q5hdkqdep613" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -236,7 +292,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://yeyeye0525.github.io/myblog/myblog/2016/06/13/hello-world/" data-id="cipgxh22q0001jvhdc51k6mvk" class="article-share-link">Partager</a>
+      <a data-url="https://yeyeye0525.github.io/myblog/myblog/2016/06/13/hello-world/" data-id="cipigubs10000q5hdagg545ag" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -274,6 +330,10 @@
     <h3 class="widget-title">Articles récents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/myblog/2016/06/16/是否移动端/">是否移动端</a>
+          </li>
         
           <li>
             <a href="/myblog/2016/06/15/npm私服/">npm私服</a>
