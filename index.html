@@ -74,6 +74,51 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-刷新upyun缓存接口" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/myblog/2016/07/06/刷新upyun缓存接口/" class="article-date">
+  <time datetime="2016-07-06T15:02:27.000Z" itemprop="datePublished">2016-07-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/myblog/2016/07/06/刷新upyun缓存接口/">刷新upyun缓存接口</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>公司使用upyun云空间，需要开发更新工具，然后官网并没有upyun刷新缓存的nodejs－api，故根据文档，自己封装了一下。</p>
+<p>###参考api：</p>
+<ol>
+<li><a href="https://github.com/upyun/node-sdk基础上新增刷新upyun缓存接口" target="_blank" rel="external">https://github.com/upyun/node-sdk基础上新增刷新upyun缓存接口</a></li>
+<li><a href="http://docs.upyun.com/api/purge/" target="_blank" rel="external">http://docs.upyun.com/api/purge/</a></li>
+<li><a href="https://github.com/request/request" target="_blank" rel="external">https://github.com/request/request</a></li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">var util = require(&quot;thinkjs-util&quot;);</span><br><span class="line">var request = require(&quot;request&quot;);</span><br><span class="line">var fs = require(&quot;fs&quot;);</span><br><span class="line">var path = require(&quot;path&quot;);</span><br><span class="line"></span><br><span class="line">purge: function(uri, method, url, headers, options)&#123;</span><br><span class="line">            uri = &quot;/&quot; + uri;</span><br><span class="line">            method = method || &quot;GET&quot;;</span><br><span class="line">            headers = headers || &#123;&#125;;</span><br><span class="line">            var length = 0;</span><br><span class="line">            if (url) &#123;</span><br><span class="line">                length = !util.isBuffer(url) ? Buffer.byteLength(url) : url.length;</span><br><span class="line">            &#125;</span><br><span class="line">            var date = (new Date()).toUTCString();</span><br><span class="line"></span><br><span class="line">            var sign = url + &apos;&amp;&apos; + this.bucketname + &apos;&amp;&apos; + date + &apos;&amp;&apos; + this.password;</span><br><span class="line">            var Authorization = &apos;UpYun &apos; + this.bucketname + &apos;:&apos; + this.username + &apos;:&apos; + util.md5(sign);</span><br><span class="line">            headers = util.extend(headers, &#123;</span><br><span class="line">                &apos;DATE&apos;: date,</span><br><span class="line">                &apos;AUTHORIZATION&apos;: Authorization</span><br><span class="line">            &#125;);</span><br><span class="line">            var deferred = util.getDefer();</span><br><span class="line">            var opts = util.extend(&#123;</span><br><span class="line">                url: &quot;http://purge.upyun.com/purge/&quot;,</span><br><span class="line">                form:&#123;purge:url&#125;,</span><br><span class="line">                headers: headers</span><br><span class="line">            &#125;, options);</span><br><span class="line">            </span><br><span class="line">            request.post(opts, function(error, response, body)&#123;</span><br><span class="line">                </span><br><span class="line">                if (error || response.statusCode !== 200) &#123;</span><br><span class="line">                    deferred.reject(error || &quot;statusCode: &quot; + response.statusCode + &quot;; body: &quot; + body);</span><br><span class="line">                &#125;else&#123;</span><br><span class="line">                    deferred.resolve(response);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;);</span><br><span class="line">            return deferred.promise;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">upyun.purge(&apos;purge&apos;,&apos;GET&apos;,&apos;http://test.b0.upaiyun.com/pphelp/test.jpg\n&apos;)</span><br></pre></td></tr></table></figure>
+<p>reques挺好用的，之前也使用它对接sso，简单快捷。<br>666</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://yeyeye0525.github.io/myblog/myblog/2016/07/06/刷新upyun缓存接口/" data-id="ciqb0uvr60002wthdltqngcau" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-是否移动端" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/myblog/2016/06/16/是否移动端/" class="article-date">
@@ -110,7 +155,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://yeyeye0525.github.io/myblog/myblog/2016/06/16/是否移动端/" data-id="cipigubs70001q5hdxhq94kz4" class="article-share-link">Partager</a>
+      <a data-url="https://yeyeye0525.github.io/myblog/myblog/2016/06/16/是否移动端/" data-id="ciqb0uvrd0005wthd4nlvts2c" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -163,7 +208,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://yeyeye0525.github.io/myblog/myblog/2016/06/15/npm私服/" data-id="cipigubsm0003q5hd0j79zmog" class="article-share-link">Partager</a>
+      <a data-url="https://yeyeye0525.github.io/myblog/myblog/2016/06/15/npm私服/" data-id="ciqb0uvra0004wthd2fylspin" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -200,7 +245,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://yeyeye0525.github.io/myblog/myblog/2016/06/14/nodejs-cmd/" data-id="cipigubsa0002q5hd9u9ngnc0" class="article-share-link">Partager</a>
+      <a data-url="https://yeyeye0525.github.io/myblog/myblog/2016/06/14/nodejs-cmd/" data-id="ciqb0uvr80003wthdlatyaok3" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -247,7 +292,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://yeyeye0525.github.io/myblog/myblog/2016/06/13/hello/" data-id="cipigubso0004q5hdkqdep613" class="article-share-link">Partager</a>
+      <a data-url="https://yeyeye0525.github.io/myblog/myblog/2016/06/13/hello/" data-id="ciqb0uvr30001wthdbl6nzhpr" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -292,7 +337,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://yeyeye0525.github.io/myblog/myblog/2016/06/13/hello-world/" data-id="cipigubs10000q5hdagg545ag" class="article-share-link">Partager</a>
+      <a data-url="https://yeyeye0525.github.io/myblog/myblog/2016/06/13/hello-world/" data-id="ciqb0uvqy0000wthdw09vi8xq" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -319,7 +364,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/myblog/archives/2016/06/">June 2016</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/myblog/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/myblog/archives/2016/06/">June 2016</a></li></ul>
     </div>
   </div>
 
@@ -330,6 +375,10 @@
     <h3 class="widget-title">Articles récents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/myblog/2016/07/06/刷新upyun缓存接口/">刷新upyun缓存接口</a>
+          </li>
         
           <li>
             <a href="/myblog/2016/06/16/是否移动端/">是否移动端</a>
@@ -345,10 +394,6 @@
         
           <li>
             <a href="/myblog/2016/06/13/hello/">我是前端</a>
-          </li>
-        
-          <li>
-            <a href="/myblog/2016/06/13/hello-world/">Hello World</a>
           </li>
         
       </ul>
